@@ -15,4 +15,15 @@ public class UsuarioModel {
     @Getter
     @Setter
     String nombre;
+
+
+    @Getter
+    @Setter
+    Integer edad;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "direccion_id", referencedColumnName = "id")
+    @Setter
+    @Getter
+    private DireccionModel direccion;
 }
